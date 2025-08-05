@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   LiteralValueUtility.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:01:39 by dande-je          #+#    #+#             */
-/*   Updated: 2025/08/05 00:13:19 by dande-je         ###   ########.fr       */
+/*   Created: 2025/08/04 23:29:52 by dande-je          #+#    #+#             */
+/*   Updated: 2025/08/05 00:01:03 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "application/commands/ScalarConverter.hpp"
-#include "application/commands/ValidationArgs.hpp"
-#include <cstdlib>
+#include "domain/models/LiteralValue.hpp"
+#include "domain/models/ScalarType.hpp"
+#include <string>
 
-int main(int argc, char** argv) {
-  if (!ValidationArgs::isValidArgs(argc, argv)) {
-    return EXIT_FAILURE;
-  }
-  ScalarConverter::convert(argv[ScalarConverter::LITERAL_ARGUMENT_INDEX]);
-  return EXIT_SUCCESS;
+const std::string& LiteralValue::getRawValue() const throw() {
+  return m_rawValue;
+}
+
+ScalarType LiteralValue::getDetectedType() const throw() {
+  return m_detectedType;
+}
+
+SpecialValue LiteralValue::getSpecialValue() const throw() {
+  return m_specialValue;
 }
