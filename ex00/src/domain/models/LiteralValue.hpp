@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 23:29:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/08/04 23:53:09 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/08/05 01:46:16 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ class LiteralValue {
   const std::string& getRawValue() const throw();
   ScalarType getDetectedType() const throw();
   SpecialValue getSpecialValue() const throw();
+
+  void setDetectedType(ScalarType type) throw();
+  void setSpecialValue(SpecialValue special) throw();
+
+  bool isValid() const throw();
+  bool isSpecial() const throw();
 
  private:
   std::string m_rawValue;
