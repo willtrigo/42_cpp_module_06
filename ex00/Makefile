@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/08/05 00:43:45 by dande-je         ###   ########.fr        #
+#    Updated: 2025/08/29 19:02:43 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS_MODELS_DIR                 := $(SRCS_DOMAIN_DIR)models/
 
 SRCS_INFRASTRUCTURE_DIR         := $(SRCS_DIR)infrastructure/
 SRCS_IO_DIR                     := $(SRCS_INFRASTRUCTURE_DIR)io/
+SRCS_PARSING_DIR                := $(SRCS_INFRASTRUCTURE_DIR)parsing/
 SRCS_UTILS_DIR                  := $(SRCS_INFRASTRUCTURE_DIR)utils/
 
 SRCS_INTERFACES_DIR             := $(SRCS_DIR)interfaces/
@@ -67,6 +68,8 @@ SRCS_FILES                      += $(addprefix $(SRCS_MODELS_DIR), LiteralValue.
 								   LiteralValueUtility.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), StreamWriter.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_PARSING_DIR), TypeDetector.cpp \
+								   TypeDetectorUtility.cpp)
 SRCS_FILES                      += $(addprefix $(SRCS_UTILS_DIR), TerminalColor.cpp \
 								   TerminalColorUtility.cpp)
 

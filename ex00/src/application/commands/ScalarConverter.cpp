@@ -6,15 +6,17 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:35:41 by dande-je          #+#    #+#             */
-/*   Updated: 2025/08/05 00:05:30 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/08/29 19:18:48 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "application/commands/ScalarConverter.hpp"
 #include "domain/models/LiteralValue.hpp"
 #include "infrastructure/io/StreamWriter.hpp"
+#include "infrastructure/parsing/TypeDetector.hpp"
 #include "infrastructure/utils/TerminalColor.hpp"
 #include <iostream>
+#include <sstream>
 #include <stdexcept>
 
 ScalarConverter::ScalarConverter(const ScalarConverter&) {}
@@ -27,5 +29,12 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter&) {
 
 void ScalarConverter::convert(const std::string &literal) {
   LiteralValue value(literal);
-  StreamWriter::print(std::cout, YELLOW, "value: " + value.getRawValue());
+
+  value.setDetectedType(TypeDetector::detectType(literal));
+  value.setSpecialValue(TypeDetector::detectSpecialValue(literal));
+
+  std::ostringstream oss;
+  oss << static_cast<int>(value.getDetectedType());
+
+  StreamWriter::print(std::cout, YELLOW, "value: " + value.getRawValue() + " detectType: "+ oss.str());
 }
