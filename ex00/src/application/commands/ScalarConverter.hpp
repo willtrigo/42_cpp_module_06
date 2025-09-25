@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/08/05 00:12:43 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/24 16:06:34 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class ScalarConverter {
   static void convert(const std::string& literal);
 
  private:
-  ScalarConverter(const ScalarConverter&);
+  ScalarConverter(const ScalarConverter& /*unused*/);
   ~ScalarConverter();
 
-  ScalarConverter& operator=(const ScalarConverter&);
+  ScalarConverter& operator=(const ScalarConverter& /*unused*/);
 };
 
-#endif // SCALAR_CONVERTER_HPP
+#endif  // SCALAR_CONVERTER_HPP

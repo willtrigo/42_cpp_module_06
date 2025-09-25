@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "infrastructure/utils/TerminalColor.hpp"
+
 #include <string>
 
 std::string TerminalColor::getColor(StrColor strColor) {
@@ -52,7 +53,8 @@ std::string TerminalColor::setColor(Style style, const std::string& str) {
   return result;
 }
 
-std::string TerminalColor::setColor(BgColor bgColor, StrColor strColor, const std::string& str) {
+std::string TerminalColor::setColor(BgColor bgColor, StrColor strColor,
+                                    const std::string& str) {
   std::string result;
 
   result += BG_COLOR_MAP[bgColor].second;
@@ -62,7 +64,8 @@ std::string TerminalColor::setColor(BgColor bgColor, StrColor strColor, const st
   return result;
 }
 
-std::string TerminalColor::setColor(StrColor strColor, Style style, const std::string& str) {
+std::string TerminalColor::setColor(StrColor strColor, Style style,
+                                    const std::string& str) {
   std::string result;
 
   result += STYLE_MAP[style].second;
@@ -72,7 +75,8 @@ std::string TerminalColor::setColor(StrColor strColor, Style style, const std::s
   return result;
 }
 
-std::string TerminalColor::setColor(BgColor bgColor, StrColor strColor, Style style, const std::string& str) {
+std::string TerminalColor::setColor(BgColor bgColor, StrColor strColor,
+                                    Style style, const std::string& str) {
   std::string result;
 
   result += STYLE_MAP[style].second;

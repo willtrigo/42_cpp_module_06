@@ -1,4 +1,6 @@
 .cache/
+.clang-tidy
+.clang-format
 *.json
 *.o
 *.d

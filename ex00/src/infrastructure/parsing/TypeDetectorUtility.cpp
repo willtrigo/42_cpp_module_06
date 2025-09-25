@@ -6,12 +6,13 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:27:37 by dande-je          #+#    #+#             */
-/*   Updated: 2025/08/29 19:01:23 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/24 15:54:48 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "domain/models/ScalarType.hpp"
 #include "infrastructure/parsing/TypeDetector.hpp"
+
 #include <cctype>
 #include <cstddef>
 #include <cstdlib>
@@ -20,25 +21,32 @@
 ScalarType TypeDetector::detectType(const std::string& literal) {
   if (literal.empty()) {
     return SCALAR_INVALID;
-  } else if (isCharLiteral((literal))) {
+  }
+  if (isCharLiteral((literal))) {
     return SCALAR_CHAR;
-  } else if (isFloatLiteral(literal)) {
+  }
+  if (isFloatLiteral(literal)) {
     return SCALAR_FLOAT;
-  } else if (isDoubleLiteral(literal)) {
+  }
+  if (isDoubleLiteral(literal)) {
     return SCALAR_DOUBLE;
-  } else if (isIntLiteral(literal)) {
+  }
+  if (isIntLiteral(literal)) {
     return SCALAR_INT;
   }
 
   return SCALAR_INVALID;
 }
 
-SpecialValue TypeDetector::detectSpecialValue(const std::string &literal) {
+SpecialValue TypeDetector::detectSpecialValue(const std::string& literal) {
   if (literal == "nan" || literal == "nanf") {
     return SPECIAL_NAN_VALUE;
-  } else if (literal == "+inf" || literal == "+inff" || literal == "inf" || literal == "inff") {
+  }
+  if (literal == "+inf" || literal == "+inff" || literal == "inf" ||
+      literal == "inff") {
     return SPECIAL_POSITIVE_INF;
-  } else if (literal == "-inf" || literal == "-inff") {
+  }
+  if (literal == "-inf" || literal == "-inff") {
     return SPECIAL_NEGATIVE_INF;
   }
 
@@ -59,10 +67,10 @@ bool TypeDetector::isIntLiteral(const std::string& literal) {
   size_t startIndex = 0;
   if (!hasValidSignPrefix(literal, startIndex)) {
     return false;
-  } 
+  }
 
   for (size_t i = startIndex; i < literal.length(); ++i) {
-    if (!std::isdigit(static_cast<unsigned char>(literal[i]))) {
+    if (std::isdigit(static_cast<unsigned char>(literal[i])) == 0) {
       return false;
     }
   }
@@ -71,21 +79,19 @@ bool TypeDetector::isIntLiteral(const std::string& literal) {
 }
 
 bool TypeDetector::isFloatLiteral(const std::string& literal) {
-  if (literal.length() < MINIMUM_FLOAT_LENGTH || !endsWithFloatSuffix(literal)) {
+  if (literal.length() < MINIMUM_FLOAT_LENGTH ||
+      !endsWithFloatSuffix(literal)) {
     return false;
   }
 
   const std::string numericPart = literal.substr(
-    CHAR_LITERAL_BEGIN_INDEX,
-    literal.length() - FLOAT_SUFFIX_LENGHT
-  );
+      CHAR_LITERAL_BEGIN_INDEX, literal.length() - FLOAT_SUFFIX_LENGHT);
 
   return isNumeric(numericPart) && containsDecimalPoint(numericPart);
 }
 
 bool TypeDetector::isDoubleLiteral(const std::string& literal) {
-  return isNumeric(literal) &&
-         containsDecimalPoint(literal) &&
+  return isNumeric(literal) && containsDecimalPoint(literal) &&
          !endsWithFloatSuffix(literal);
 }
 
@@ -100,7 +106,8 @@ bool TypeDetector::isNumeric(const std::string& literal) {
   return *endptr == '\0';
 }
 
-bool TypeDetector::hasValidSignPrefix(const std::string& literal, size_t& startIndex) {
+bool TypeDetector::hasValidSignPrefix(const std::string& literal,
+                                      size_t& startIndex) {
   const char firstChar = literal[CHAR_LITERAL_BEGIN_INDEX];
   if (firstChar == '+' || firstChar == '-') {
     startIndex++;

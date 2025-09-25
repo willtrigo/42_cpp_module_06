@@ -6,12 +6,13 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:01:39 by dande-je          #+#    #+#             */
-/*   Updated: 2025/08/05 00:13:19 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/25 10:45:16 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "application/commands/ScalarConverter.hpp"
 #include "application/commands/ValidationArgs.hpp"
+
 #include <cstdlib>
 
 int main(int argc, char** argv) {

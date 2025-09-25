@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 23:29:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/08/05 01:46:16 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/24 16:04:40 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define LITERAL_VALUE_HPP
 
 #include "domain/models/ScalarType.hpp"
+
 #include <string>
 
 class LiteralValue {
@@ -40,4 +41,4 @@ class LiteralValue {
   SpecialValue m_specialValue;
 };
 
-#endif // LITERAL_VALUE_HPP
+#endif  // LITERAL_VALUE_HPP

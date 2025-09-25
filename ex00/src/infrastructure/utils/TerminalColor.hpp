@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:13:47 by dande-je          #+#    #+#             */
-/*   Updated: 2025/07/31 18:37:34 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/24 15:48:14 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,7 @@ enum BgColor {
   BG_RESET
 };
 
-enum Style {
-  BOLD,
-  ITALIC,
-  UNDERLINE
-};
+enum Style { BOLD, ITALIC, UNDERLINE };
 
 class TerminalColor {
  public:
@@ -56,20 +52,24 @@ class TerminalColor {
   static std::string setColor(StrColor strColor, const std::string& str);
   static std::string setColor(BgColor bgColor, const std::string& str);
   static std::string setColor(Style style, const std::string& str);
-  static std::string setColor(BgColor bgColor, StrColor strColor, const std::string& str);
-  static std::string setColor(BgColor bgColor, Style style, const std::string& str);
-  static std::string setColor(StrColor strColor, Style style, const std::string& str);
-  static std::string setColor(BgColor bgColor, StrColor strColor, Style style, const std::string& str);
+  static std::string setColor(BgColor bgColor, StrColor strColor,
+                              const std::string& str);
+  static std::string setColor(BgColor bgColor, Style style,
+                              const std::string& str);
+  static std::string setColor(StrColor strColor, Style style,
+                              const std::string& str);
+  static std::string setColor(BgColor bgColor, StrColor strColor, Style style,
+                              const std::string& str);
 
  private:
-  TerminalColor(const TerminalColor&);
+  TerminalColor(const TerminalColor& /*unused*/);
   ~TerminalColor();
 
-  TerminalColor& operator=(const TerminalColor&);
+  TerminalColor& operator=(const TerminalColor& /*unused*/);
 
   static const std::pair<StrColor, std::string> STR_COLOR_MAP[];
   static const std::pair<BgColor, std::string> BG_COLOR_MAP[];
   static const std::pair<Style, std::string> STYLE_MAP[];
 };
 
-#endif // TERMINAL_COLOR_HPP
+#endif  // TERMINAL_COLOR_HPP
