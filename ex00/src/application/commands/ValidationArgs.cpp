@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:43:05 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 17:43:10 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 18:07:48 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ ValidationArgs& ValidationArgs::operator=(const ValidationArgs& /*unused*/) {
 bool ValidationArgs::isValidArgs(int argc, char** argv) {
   if (argc != MAX_SIZE_ARGS) {
     StreamWriter::print(
-        std::cerr, TerminalColor::setColor(RED, "Usage: " + std::string(argv[NAME_PROGRAM]) + " <literal>"), true);
+        std::cerr,
+        TerminalColor::setColor(
+            RED, "Usage: " + std::string(argv[NAME_PROGRAM]) + " <literal>"),
+        true);
     return false;
   }
   return true;
