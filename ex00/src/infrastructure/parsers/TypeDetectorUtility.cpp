@@ -6,11 +6,11 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:27:37 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 14:56:51 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:24:03 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "domain/models/ScalarType.hpp"
+#include "domain/models/value_objects/ScalarType.hpp"
 #include "infrastructure/parsers/TypeDetector.hpp"
 
 #include <cctype>

@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/09/29 17:54:40 by dande-je         ###   ########.fr        #
+#    Updated: 2025/09/29 19:26:57 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ SRCS_COMMANDS_DIR               := $(SRCS_APPLICATION_DIR)commands/
 
 SRCS_DOMAIN_DIR                 := $(SRCS_DIR)domain/
 SRCS_MODELS_DIR                 := $(SRCS_DOMAIN_DIR)models/
+SRCS_ENTITIES_DIR               := $(SRCS_MODELS_DIR)entities/
+SRCS_SERVICES_DIR               := $(SRCS_MODELS_DIR)services/
+SRCS_VALUE_OBJECTS_DIR          := $(SRCS_MODELS_DIR)value_objects/
 
 SRCS_INFRASTRUCTURE_DIR         := $(SRCS_DIR)infrastructure/
 SRCS_CONVERTERS_DIR             := $(SRCS_INFRASTRUCTURE_DIR)converters/
@@ -65,10 +68,10 @@ NAME                            = $(BIN_DIR)$(NAME_OUTPUT)
 SRCS_FILES                      += $(addprefix $(SRCS_COMMANDS_DIR), ScalarConverter.cpp \
 								   ValidationArgs.cpp)
 
-SRCS_FILES                      += $(addprefix $(SRCS_MODELS_DIR), ConversionResult.cpp \
-																	 ConversionResultUtility.cpp \
-																	 LiteralValue.cpp \
-								   LiteralValueUtility.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_ENTITIES_DIR), LiteralValue.cpp \
+																	 LiteralValueUtility.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_VALUE_OBJECTS_DIR), ConversionResult.cpp \
+																	 ConversionResultUtility.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_CONVERTERS_DIR), TypeConverter.cpp \
 																	 TypeConverterUtility.cpp)

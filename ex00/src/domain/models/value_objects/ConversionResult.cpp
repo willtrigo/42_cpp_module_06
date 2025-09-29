@@ -6,11 +6,11 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:47:00 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 15:25:21 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:22:25 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "domain/models/ConversionResult.hpp"
+#include "domain/models/value_objects/ConversionResult.hpp"
 
 template <typename T>
 ConversionResult<T>::ConversionResult(T value)

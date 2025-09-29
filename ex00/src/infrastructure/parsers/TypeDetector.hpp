@@ -6,14 +6,14 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:26:40 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 14:56:46 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:24:15 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPE_DETECTOR_HPP
 #define TYPE_DETECTOR_HPP
 
-#include "domain/models/ScalarType.hpp"
+#include "domain/models/value_objects/ScalarType.hpp"
 
 #include <cstddef>
 #include <string>

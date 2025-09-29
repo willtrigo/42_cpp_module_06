@@ -6,11 +6,11 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:27:58 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 18:14:52 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:23:42 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "domain/models/LiteralValue.hpp"
+#include "domain/models/entities/LiteralValue.hpp"
 #include "infrastructure/parsers/ValueParser.hpp"
 
 #include <cstdlib>

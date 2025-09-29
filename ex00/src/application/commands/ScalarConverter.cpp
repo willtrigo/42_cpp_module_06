@@ -6,13 +6,13 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 17:35:41 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 17:53:16 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:25:49 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "application/commands/ScalarConverter.hpp"
-#include "domain/models/ConversionResult.hpp"
-#include "domain/models/LiteralValue.hpp"
+#include "domain/models/value_objects/ConversionResult.hpp"
+#include "domain/models/entities/LiteralValue.hpp"
 #include "infrastructure/converters/TypeConverter.hpp"
 #include "infrastructure/io/OutputFormatter.hpp"
 #include "infrastructure/parsers/TypeDetector.hpp"

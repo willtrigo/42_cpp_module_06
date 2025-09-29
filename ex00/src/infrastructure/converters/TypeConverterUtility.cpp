@@ -6,11 +6,11 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 15:27:19 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:24:29 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "domain/models/ConversionResult.hpp"
+#include "domain/models/value_objects/ConversionResult.hpp"
 #include "infrastructure/converters/TypeConverter.hpp"
 #include "infrastructure/parsers/ValueParser.hpp"
 

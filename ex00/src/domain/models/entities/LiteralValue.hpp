@@ -6,14 +6,14 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 23:29:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 14:55:48 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:25:04 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LITERAL_VALUE_HPP
 #define LITERAL_VALUE_HPP
 
-#include "domain/models/ScalarType.hpp"
+#include "domain/models/value_objects/ScalarType.hpp"
 
 #include <string>
 

@@ -6,15 +6,15 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:03 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 15:01:59 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:24:44 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPE_CONVERTER_HPP
 #define TYPE_CONVERTER_HPP
 
-#include "domain/models/ConversionResult.hpp"
-#include "domain/models/LiteralValue.hpp"
+#include "domain/models/value_objects/ConversionResult.hpp"
+#include "domain/models/entities/LiteralValue.hpp"
 
 class TypeConverter {
  public:

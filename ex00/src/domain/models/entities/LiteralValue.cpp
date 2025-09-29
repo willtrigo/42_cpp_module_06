@@ -6,12 +6,12 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 23:29:15 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 14:55:45 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:21:28 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "domain/models/LiteralValue.hpp"
-#include "domain/models/ScalarType.hpp"
+#include "domain/models/entities/LiteralValue.hpp"
+#include "domain/models/value_objects/ScalarType.hpp"
 
 #include <string>
 

@@ -6,14 +6,14 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:14:38 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 18:14:45 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 19:23:52 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VALUE_PARSER_HPP
 #define VALUE_PARSER_HPP
 
-#include "domain/models/LiteralValue.hpp"
+#include "domain/models/entities/LiteralValue.hpp"
 
 class ValueParser {
  public:
