@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/09/24 14:00:42 by dande-je         ###   ########.fr        #
+#    Updated: 2025/09/29 17:54:40 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,9 @@ SRCS_DOMAIN_DIR                 := $(SRCS_DIR)domain/
 SRCS_MODELS_DIR                 := $(SRCS_DOMAIN_DIR)models/
 
 SRCS_INFRASTRUCTURE_DIR         := $(SRCS_DIR)infrastructure/
+SRCS_CONVERTERS_DIR             := $(SRCS_INFRASTRUCTURE_DIR)converters/
 SRCS_IO_DIR                     := $(SRCS_INFRASTRUCTURE_DIR)io/
-SRCS_PARSING_DIR                := $(SRCS_INFRASTRUCTURE_DIR)parsing/
+SRCS_PARSERS_DIR                := $(SRCS_INFRASTRUCTURE_DIR)parsers/
 SRCS_UTILS_DIR                  := $(SRCS_INFRASTRUCTURE_DIR)utils/
 
 SRCS_INTERFACES_DIR             := $(SRCS_DIR)interfaces/
@@ -64,12 +65,20 @@ NAME                            = $(BIN_DIR)$(NAME_OUTPUT)
 SRCS_FILES                      += $(addprefix $(SRCS_COMMANDS_DIR), ScalarConverter.cpp \
 								   ValidationArgs.cpp)
 
-SRCS_FILES                      += $(addprefix $(SRCS_MODELS_DIR), LiteralValue.cpp \
+SRCS_FILES                      += $(addprefix $(SRCS_MODELS_DIR), ConversionResult.cpp \
+																	 ConversionResultUtility.cpp \
+																	 LiteralValue.cpp \
 								   LiteralValueUtility.cpp)
 
-SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), StreamWriter.cpp)
-SRCS_FILES                      += $(addprefix $(SRCS_PARSING_DIR), TypeDetector.cpp \
-								   TypeDetectorUtility.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_CONVERTERS_DIR), TypeConverter.cpp \
+																	 TypeConverterUtility.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), OutputFormatter.cpp \
+																	 OutputFormatterUtility.cpp \
+																	 StreamWriter.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector.cpp \
+								   TypeDetectorUtility.cpp \
+									 ValueParser.cpp \
+									 ValueParserUtility.cpp)
 SRCS_FILES                      += $(addprefix $(SRCS_UTILS_DIR), TerminalColor.cpp \
 								   TerminalColorUtility.cpp)
 

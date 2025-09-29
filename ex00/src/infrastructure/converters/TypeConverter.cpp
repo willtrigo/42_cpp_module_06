@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TypeConvertor.hpp                                  :+:      :+:    :+:   */
+/*   TypeConverter.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 19:36:03 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/01 20:55:38 by dande-je         ###   ########.fr       */
+/*   Created: 2025/09/01 19:35:51 by dande-je          #+#    #+#             */
+/*   Updated: 2025/09/29 17:13:47 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPE_CONVERTOR_HPP
-#define TYPE_CONVERTOR_HPP
+#include "infrastructure/converters/TypeConverter.hpp"
 
-#include "domain/models/ConversionResult.hpp"
-#include "domain/models/LiteralValue.hpp"
+#include <stdexcept>
 
-class TypeConvertor {
- public:
-  static CharResult convertToChar(const LiteralValue& literal);
+TypeConverter::TypeConverter(const TypeConverter& /*unused*/) {}
 
- private:
-  TypeConvertor(const TypeConvertor&);
-  ~TypeConvertor();
+TypeConverter::~TypeConverter() {}
 
-  TypeConvertor& operator=(const TypeConvertor&);
-};
-
-#endif // TYPE_CONVERTOR_HPP
+TypeConverter& TypeConverter::operator=(const TypeConverter& /*unused*/) {
+  throw std::runtime_error("TypeConverter assignment is not allowed");
+}

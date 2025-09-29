@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:47:14 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/25 18:36:03 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 15:22:01 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define CONVERSION_RESULT_HPP
 
 #include <string>
-template<typename T>
+
+template <typename T>
 class ConversionResult {
  public:
   explicit ConversionResult(T value);
@@ -39,7 +40,9 @@ class ConversionResult {
 };
 
 template class ConversionResult<char>;
+template class ConversionResult<int>;
 
 typedef ConversionResult<char> CharResult;
+typedef ConversionResult<int> IntResult;
 
 #endif  // CONVERSION_RESULT_HPP

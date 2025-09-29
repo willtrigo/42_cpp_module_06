@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   OutputFormatter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 14:55:24 by dande-je         ###   ########.fr       */
+/*   Created: 2025/09/29 17:10:40 by dande-je          #+#    #+#             */
+/*   Updated: 2025/09/29 17:13:40 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#include "infrastructure/io/OutputFormatter.hpp"
 
-#include <string>
+#include <stdexcept>
 
-class ScalarConverter {
- public:
-  static const int LITERAL_ARGUMENT_INDEX = 1;
+OutputFormatter::OutputFormatter(const OutputFormatter& /*unused*/) {}
 
-  static void convert(const std::string& literal);
+OutputFormatter::~OutputFormatter() {}
 
- private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
-
-  ScalarConverter& operator=(const ScalarConverter&);
-};
-
-#endif  // SCALAR_CONVERTER_HPP
+OutputFormatter& OutputFormatter::operator=(const OutputFormatter& /*unused*/) {
+  throw std::runtime_error("OutputFormatter assigment is not allowed");
+}

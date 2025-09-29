@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ValueParser.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 14:55:24 by dande-je         ###   ########.fr       */
+/*   Created: 2025/09/29 14:14:38 by dande-je          #+#    #+#             */
+/*   Updated: 2025/09/29 15:26:37 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#ifndef VALUE_PARSER_HPP
+#define VALUE_PARSER_HPP
 
-#include <string>
+#include "domain/models/LiteralValue.hpp"
 
-class ScalarConverter {
+class ValueParser {
  public:
-  static const int LITERAL_ARGUMENT_INDEX = 1;
-
-  static void convert(const std::string& literal);
+  static char parserChar(const LiteralValue& literal);
+  static int parserInt(const LiteralValue& literal);
 
  private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
+  ValueParser(const ValueParser&);
+  ~ValueParser();
 
-  ScalarConverter& operator=(const ScalarConverter&);
+  ValueParser& operator=(const ValueParser&);
 };
 
-#endif  // SCALAR_CONVERTER_HPP
+#endif  // VALUE_PARSER_HPP

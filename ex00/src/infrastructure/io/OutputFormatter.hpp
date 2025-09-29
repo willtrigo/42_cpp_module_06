@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TypeconvertorUtility.cpp                           :+:      :+:    :+:   */
+/*   OutputFormatter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 19:36:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/02 00:40:30 by dande-je         ###   ########.fr       */
+/*   Created: 2025/09/29 16:58:48 by dande-je          #+#    #+#             */
+/*   Updated: 2025/09/29 17:07:22 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef OUTPUT_FORMATTER_HPP
+#define OUTPUT_FORMATTER_HPP
+
 #include "domain/models/ConversionResult.hpp"
-#include "infrastructure/conversion/TypeConvertor.hpp"
 
-CharResult TypeConvertor::convertToChar(const LiteralValue &literal) {
-  if (literal.isSpecial()) {
-    return CharResult("impossible");
-  }
+#include <string>
 
-  try {
+class OutputFormatter {
+ public:
+  static void displayResults(const CharResult& charResult);
 
-  }
-}
+ private:
+  OutputFormatter(const OutputFormatter&);
+  ~OutputFormatter();
+
+  OutputFormatter& operator=(const OutputFormatter&);
+
+  static std::string formatChar(const CharResult& result);
+};
+
+#endif  // OUTPUT_FORMATTER_HPP

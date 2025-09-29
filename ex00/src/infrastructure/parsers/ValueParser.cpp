@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TypeConverter.cpp                                  :+:      :+:    :+:   */
+/*   ValueParser.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 19:35:51 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/01 21:02:03 by dande-je         ###   ########.fr       */
+/*   Created: 2025/09/29 14:18:55 by dande-je          #+#    #+#             */
+/*   Updated: 2025/09/29 14:44:09 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "infrastructure/conversion/TypeConvertor.hpp"
+#include "infrastructure/parsers/ValueParser.hpp"
+
 #include <stdexcept>
 
-TypeConvertor::TypeConvertor(const TypeConvertor&) {}
+ValueParser::ValueParser(const ValueParser& /*unused*/) {}
 
-TypeConvertor::~TypeConvertor() {}
+ValueParser::~ValueParser() {}
 
-TypeConvertor& TypeConvertor::operator=(const TypeConvertor&) {
-  throw std::runtime_error("TypeConvertor assgnment is not allowed");
+ValueParser& ValueParser::operator=(const ValueParser& /*unused*/) {
+  throw std::runtime_error("ValueParser assignment is not allowed");
 }

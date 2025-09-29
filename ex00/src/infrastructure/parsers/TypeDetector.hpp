@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:26:40 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/24 15:55:40 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 14:56:46 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ class TypeDetector {
   static const size_t FLOAT_SUFFIX_LENGHT = 1U;
   static const size_t MINIMUM_SIGN_PREFFIX_LENGTH = 3U;
 
-  TypeDetector(const TypeDetector& /*unused*/);
+  TypeDetector(const TypeDetector&);
   ~TypeDetector();
 
-  TypeDetector& operator=(const TypeDetector& /*unused*/);
+  TypeDetector& operator=(const TypeDetector&);
 
   static bool isCharLiteral(const std::string& literal);
   static bool isIntLiteral(const std::string& literal);

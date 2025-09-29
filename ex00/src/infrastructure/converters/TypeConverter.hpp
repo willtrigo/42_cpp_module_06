@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   TypeConverter.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 14:55:24 by dande-je         ###   ########.fr       */
+/*   Created: 2025/09/01 19:36:03 by dande-je          #+#    #+#             */
+/*   Updated: 2025/09/29 15:01:59 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#ifndef TYPE_CONVERTER_HPP
+#define TYPE_CONVERTER_HPP
 
-#include <string>
+#include "domain/models/ConversionResult.hpp"
+#include "domain/models/LiteralValue.hpp"
 
-class ScalarConverter {
+class TypeConverter {
  public:
-  static const int LITERAL_ARGUMENT_INDEX = 1;
-
-  static void convert(const std::string& literal);
+  static CharResult convertToChar(const LiteralValue& literal);
 
  private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
+  TypeConverter(const TypeConverter&);
+  ~TypeConverter();
 
-  ScalarConverter& operator=(const ScalarConverter&);
+  TypeConverter& operator=(const TypeConverter&);
+
+  static bool isCharDisplayable(char chr);
 };
 
-#endif  // SCALAR_CONVERTER_HPP
+#endif  // TYPE_CONVERTER_HPP

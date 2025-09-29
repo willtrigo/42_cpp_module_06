@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:13:39 by dande-je          #+#    #+#             */
-/*   Updated: 2025/07/31 19:15:11 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 17:16:02 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ TerminalColor::TerminalColor(const TerminalColor& /*unused*/) {}
 TerminalColor::~TerminalColor() {}
 
 TerminalColor& TerminalColor::operator=(const TerminalColor& /*unused*/) {
-  throw std::runtime_error("Copying of StreamWriter is not allowed");
+  throw std::runtime_error("TerminalColor assigment is not allowed");
 }
