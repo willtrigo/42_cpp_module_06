@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:27:58 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 15:26:49 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/09/29 18:14:52 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int ValueParser::parserInt(const LiteralValue& literal) {
   }
 
   char* endptr;
-  long result = std::strtol(raw.c_str(), &endptr, 10);
+  long result = std::strtol(raw.c_str(), &endptr, DECIMAL_BASE);
 
   if (*endptr != '\0' && *endptr != 'f') {
     throw std::invalid_argument("Invalid integer format");
