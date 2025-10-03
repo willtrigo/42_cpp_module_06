@@ -6,11 +6,11 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:13:39 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 18:15:30 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:23:43 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "infrastructure/utils/TerminalColor.hpp"
+#include "presentation/utils/TerminalColor.hpp"
 
 #include <stdexcept>
 #include <utility>

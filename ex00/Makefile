@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/03 18:50:23 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/03 19:23:24 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,10 +40,10 @@ SRCS_INFRASTRUCTURE_DIR         := $(SRCS_DIR)infrastructure/
 SRCS_CONVERTERS_DIR             := $(SRCS_INFRASTRUCTURE_DIR)converters/
 SRCS_IO_DIR                     := $(SRCS_INFRASTRUCTURE_DIR)io/
 SRCS_PARSERS_DIR                := $(SRCS_INFRASTRUCTURE_DIR)parsers/
-SRCS_UTILS_DIR                  := $(SRCS_INFRASTRUCTURE_DIR)utils/
 
 SRCS_PRESENTATION_DIR           := $(SRCS_DIR)presentation/
 SRCS_CLI_DIR                    := $(SRCS_PRESENTATION_DIR)cli/
+SRCS_UTILS_DIR                  := $(SRCS_PRESENTATION_DIR)utils/
 
 INCS                            := src/
 BIN_DIR                         := bin/
@@ -82,11 +82,11 @@ SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector
 																	 TypeDetectorUtility.cpp \
 																	 ValueParser.cpp \
 																	 ValueParserUtility.cpp)
-SRCS_FILES                      += $(addprefix $(SRCS_UTILS_DIR), TerminalColor.cpp \
-																	 TerminalColorUtility.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_CLI_DIR), CliControllerConstructor.cpp\
 																	 CliControllerUtilities.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_UTILS_DIR), TerminalColor.cpp \
+																	 TerminalColorUtility.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_DIR), main.cpp)
 

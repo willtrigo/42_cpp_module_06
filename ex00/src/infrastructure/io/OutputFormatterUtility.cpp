@@ -6,13 +6,13 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:16:28 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 18:10:21 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/03 19:24:20 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "domain/models/value_objects/ConversionResult.hpp"
 #include "infrastructure/io/OutputFormatter.hpp"
-#include "infrastructure/utils/TerminalColor.hpp"
+#include "presentation/utils/TerminalColor.hpp"
 
 #include <sstream>
 
