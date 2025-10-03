@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/09/29 19:26:57 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/03 15:53:55 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector
 SRCS_FILES                      += $(addprefix $(SRCS_UTILS_DIR), TerminalColor.cpp \
 								   TerminalColorUtility.cpp)
 
-SRCS_FILES                      += $(addprefix $(SRCS_CLI_DIR), main.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_DIR), main.cpp)
 
 OBJS                            += $(SRCS_FILES:%.cpp=$(BUILD_DIR)%.o)
 
