@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/03 15:53:55 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/03 18:01:56 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ NAME_OUTPUT                     = converter
 NAME                            = $(BIN_DIR)$(NAME_OUTPUT)
 
 SRCS_FILES                      += $(addprefix $(SRCS_COMMANDS_DIR), ScalarConverter.cpp \
-								   ValidationArgs.cpp)
+																	 ValidationArgs.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_ENTITIES_DIR), LiteralValue.cpp \
 																	 LiteralValueUtility.cpp)
@@ -79,11 +79,14 @@ SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), OutputFormatter.c
 																	 OutputFormatterUtility.cpp \
 																	 StreamWriter.cpp)
 SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector.cpp \
-								   TypeDetectorUtility.cpp \
-									 ValueParser.cpp \
-									 ValueParserUtility.cpp)
+																	 TypeDetectorUtility.cpp \
+																	 ValueParser.cpp \
+																	 ValueParserUtility.cpp)
 SRCS_FILES                      += $(addprefix $(SRCS_UTILS_DIR), TerminalColor.cpp \
-								   TerminalColorUtility.cpp)
+																	 TerminalColorUtility.cpp)
+
+SRCS_FILES                      += $(addprefix $(SRCS_CLI_DIR), CliControllerConstructor.cpp\
+																	 CliControllerUtilities.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_DIR), main.cpp)
 

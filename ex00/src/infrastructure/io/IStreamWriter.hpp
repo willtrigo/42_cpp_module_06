@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   StreamWriter.hpp                                   :+:      :+:    :+:   */
+/*   IStreamWriter.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:37:21 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 18:10:13 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/03 15:56:18 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/03 18:10:32 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STREAM_WRITER_HPP
-#define STREAM_WRITER_HPP
+#ifndef ISTREAM_WRITER_HPP
+#define ISTREAM_WRITER_HPP
 
-#include "infrastructure/io/IStreamWriter.hpp"
-
-#include <iostream>
+#include <ostream>
 #include <string>
 
-class StreamWriter : public IStreamWriter {
+class IStreamWriter {
  public:
-  StreamWriter();
-  virtual ~StreamWriter();
-
-  void print(std::ostream& ostr, const std::string& str, bool newLine);
-
- private:
-  StreamWriter(const StreamWriter&);
-
-  StreamWriter& operator=(const StreamWriter&);
+  virtual ~IStreamWriter() {}
+  virtual void print(std::ostream& ostr, const std::string& str,
+                     bool newLine) = 0;
 };
 
-#endif  // STREAM_WRITER_HPP
+#endif  // ISTREAM_WRITER_HPP

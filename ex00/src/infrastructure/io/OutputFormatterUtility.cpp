@@ -6,22 +6,22 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:16:28 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:26:21 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:10:21 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "domain/models/value_objects/ConversionResult.hpp"
 #include "infrastructure/io/OutputFormatter.hpp"
-#include "infrastructure/io/StreamWriter.hpp"
 #include "infrastructure/utils/TerminalColor.hpp"
 
 #include <sstream>
 
-void OutputFormatter::displayResults(const CharResult& charResult) {
-  StreamWriter::print(std::cout, TerminalColor::setColor(BLUE, "char: "),
-                      false);
-  StreamWriter::print(
-      std::cout, TerminalColor::setColor(RESET, formatChar(charResult)), true);
+std::string OutputFormatter::displayResults(const CharResult& charResult) {
+  std::ostringstream oss;
+  oss << TerminalColor::setColor(BLUE, "char: ");
+  oss << TerminalColor::setColor(RESET, formatChar(charResult)) << std::endl;
+
+  return oss.str();
 }
 
 std::string OutputFormatter::formatChar(const CharResult& result) {

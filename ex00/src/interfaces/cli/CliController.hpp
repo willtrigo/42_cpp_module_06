@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   StreamWriter.hpp                                   :+:      :+:    :+:   */
+/*   CliController.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:37:21 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 18:10:13 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/03 15:40:24 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/03 18:09:42 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STREAM_WRITER_HPP
-#define STREAM_WRITER_HPP
+#ifndef CLI_CONTRLLER_HPP
+#define CLI_CONTRLLER_HPP
 
+#include "infrastructure/io/IOutputFormatter.hpp"
 #include "infrastructure/io/IStreamWriter.hpp"
 
-#include <iostream>
-#include <string>
-
-class StreamWriter : public IStreamWriter {
+class CliController {
  public:
-  StreamWriter();
-  virtual ~StreamWriter();
+  CliController(IStreamWriter* writer, IOutputFormatter* formatter);
+  ~CliController();
 
-  void print(std::ostream& ostr, const std::string& str, bool newLine);
+  bool run(int argc, char** argv);
 
  private:
-  StreamWriter(const StreamWriter&);
+  IStreamWriter* m_writer;
+  IOutputFormatter* m_formatter;
 
-  StreamWriter& operator=(const StreamWriter&);
+  CliController(const CliController&);
+
+  CliController& operator=(const CliController& other);
 };
 
-#endif  // STREAM_WRITER_HPP
+#endif  // CLI_CONTRLLER_HPP

@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:58:48 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:26:13 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:10:24 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 #define OUTPUT_FORMATTER_HPP
 
 #include "domain/models/value_objects/ConversionResult.hpp"
+#include "infrastructure/io/IOutputFormatter.hpp"
 
 #include <string>
 
-class OutputFormatter {
+class OutputFormatter : public IOutputFormatter {
  public:
-  static void displayResults(const CharResult& charResult);
+  OutputFormatter();
+  virtual ~OutputFormatter();
+
+  std::string displayResults(const CharResult& charResult);
 
  private:
   OutputFormatter(const OutputFormatter&);
-  ~OutputFormatter();
 
   OutputFormatter& operator=(const OutputFormatter&);
 
