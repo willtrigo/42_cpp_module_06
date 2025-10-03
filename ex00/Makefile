@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/03 18:01:56 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/03 18:50:23 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,8 @@ SRCS_IO_DIR                     := $(SRCS_INFRASTRUCTURE_DIR)io/
 SRCS_PARSERS_DIR                := $(SRCS_INFRASTRUCTURE_DIR)parsers/
 SRCS_UTILS_DIR                  := $(SRCS_INFRASTRUCTURE_DIR)utils/
 
-SRCS_INTERFACES_DIR             := $(SRCS_DIR)interfaces/
-SRCS_CLI_DIR                    := $(SRCS_INTERFACES_DIR)cli/
+SRCS_PRESENTATION_DIR           := $(SRCS_DIR)presentation/
+SRCS_CLI_DIR                    := $(SRCS_PRESENTATION_DIR)cli/
 
 INCS                            := src/
 BIN_DIR                         := bin/
