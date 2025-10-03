@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:43:41 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 18:10:40 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/03 20:13:19 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 class ValidationArgs {
  public:
-  static bool isValidArgs(int argc);
+  static bool isValid(int argc);
 
   static const int NAME_PROGRAM = 0;
 

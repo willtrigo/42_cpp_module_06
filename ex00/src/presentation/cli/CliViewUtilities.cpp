@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   CliController.hpp                                  :+:      :+:    :+:   */
+/*   CliViewUtilities.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 15:40:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 19:58:16 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/03 19:52:08 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/03 20:08:42 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLI_CONTRLLER_HPP
-#define CLI_CONTRLLER_HPP
-
 #include "presentation/cli/CliView.hpp"
+#include "presentation/utils/TerminalColor.hpp"
 
-class CliController {
- public:
-  CliController(CliView& view);
-  ~CliController();
+#include <iostream>
+#include <string>
 
-  bool run(int argc, char** argv);
-
- private:
-  CliController(const CliController&);
-
-  CliController& operator=(const CliController& other);
-
-  CliView& m_view;
-};
-
-#endif  // CLI_CONTRLLER_HPP
+void CliView::showUsage(const std::string& programName) {
+  this->m_writer.print(
+      std::cerr,
+      TerminalColor::setColor(
+          RED, "Usage: " + programName + " <literal>"),
+      true);
+}

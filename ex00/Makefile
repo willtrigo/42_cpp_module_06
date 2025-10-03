@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/03 19:23:24 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/03 20:01:33 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,9 @@ SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector
 																	 ValueParserUtility.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_CLI_DIR), CliControllerConstructor.cpp\
-																	 CliControllerUtilities.cpp)
+																	 CliControllerUtilities.cpp \
+																	 CliViewConstructor.cpp \
+																	 CliViewUtilities.cpp)
 SRCS_FILES                      += $(addprefix $(SRCS_UTILS_DIR), TerminalColor.cpp \
 																	 TerminalColorUtility.cpp)
 
