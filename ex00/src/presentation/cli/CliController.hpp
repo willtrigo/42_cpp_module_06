@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:40:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 19:58:16 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 00:18:50 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ class CliController {
 
   CliController& operator=(const CliController& other);
 
+  static bool isValidArguments(int argc);
+
   CliView& m_view;
+
+  static const int MAX_SIZE_ARGS = 2;
+  static const int NAME_PROGRAM = 0;
 };
 
 #endif  // CLI_CONTRLLER_HPP

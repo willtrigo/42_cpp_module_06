@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/03 20:01:33 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/04 00:19:28 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,8 +65,7 @@ SLEEP                           := sleep 0.01
 NAME_OUTPUT                     = converter
 NAME                            = $(BIN_DIR)$(NAME_OUTPUT)
 
-SRCS_FILES                      += $(addprefix $(SRCS_COMMANDS_DIR), ScalarConverter.cpp \
-																	 ValidationArgs.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_COMMANDS_DIR), ScalarConverter.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_ENTITIES_DIR), LiteralValue.cpp \
 																	 LiteralValueUtility.cpp)
