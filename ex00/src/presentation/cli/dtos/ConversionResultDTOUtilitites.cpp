@@ -6,15 +6,16 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 00:56:27 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 19:16:11 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:12:52 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "presentation/cli/dtos/ConversionResultDTO.hpp"
 
 ConversionResultDTO ConversionResultDTO::createSuccess(
-    const CharResult& charResult, const IntResult& intResult) {
-  ConversionResultDTO dto(charResult, intResult);
+    const CharResult& charResult, const IntResult& intResult,
+    const DoubleResult& doubleResult) {
+  ConversionResultDTO dto(charResult, intResult, doubleResult);
 
   return dto;
 }

@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:47:14 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 15:22:01 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:47:03 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ class ConversionResult {
 
 template class ConversionResult<char>;
 template class ConversionResult<int>;
+template class ConversionResult<double>;
 
 typedef ConversionResult<char> CharResult;
 typedef ConversionResult<int> IntResult;
+typedef ConversionResult<double> DoubleResult;
 
 #endif  // CONVERSION_RESULT_HPP

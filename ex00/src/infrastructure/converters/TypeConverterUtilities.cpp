@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 19:16:41 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:49:37 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,15 @@ IntResult TypeConverter::convertToInt(const LiteralValue& literal) {
     return IntResult(static_cast<int>(doubleValue));
   } catch (...) {
     return IntResult("impossible");
+  }
+}
+
+DoubleResult TypeConverter::convertToDouble(const LiteralValue& literal) {
+  try {
+    double doubleValue = ValueParser::parseDouble(literal);
+    return DoubleResult(doubleValue);
+  } catch (...) {
+    return DoubleResult("impossible");
   }
 }
 

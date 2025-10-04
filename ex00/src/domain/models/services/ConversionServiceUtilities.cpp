@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 17:39:09 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 19:16:51 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:13:31 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ ConversionResultDTO ConversionService::convert(const std::string& literal) {
 
   CharResult charResult = TypeConverter::convertToChar(value);
   IntResult intResult = TypeConverter::convertToInt(value);
+  DoubleResult doubleResult = TypeConverter::convertToDouble(value);
 
-  return ConversionResultDTO::createSuccess(charResult, intResult);
+  return ConversionResultDTO::createSuccess(charResult, intResult,
+                                            doubleResult);
 }

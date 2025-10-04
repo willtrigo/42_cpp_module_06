@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:58:48 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 19:16:33 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:13:12 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class OutputFormatter : public IOutputFormatter {
   virtual ~OutputFormatter();
 
   std::string displayResults(const CharResult& charResult,
-                             const IntResult& IntResult);
+                             const IntResult& IntResult,
+                             const DoubleResult& doubleResult);
 
  private:
   OutputFormatter(const OutputFormatter&);
@@ -33,6 +34,7 @@ class OutputFormatter : public IOutputFormatter {
 
   static std::string formatChar(const CharResult& result);
   static std::string formatInt(const IntResult& result);
+  static std::string formatDouble(const DoubleResult& result);
 };
 
 #endif  // OUTPUT_FORMATTER_HPP

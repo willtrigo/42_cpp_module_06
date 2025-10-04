@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 19:52:08 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 19:16:07 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:12:48 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void CliView::showUsage(const std::string& programName) {
 void CliView::showResult(ConversionResultDTO& dto) {
   this->m_writer.print(
       std::cout,
-      this->m_formatter.displayResults(dto.charResultDTO, dto.intResultDTO),
+      this->m_formatter.displayResults(dto.charResultDTO, dto.intResultDTO,
+                                       dto.doubleResultDTO),
       false);
 }

@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:03 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 19:16:46 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:47:58 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class TypeConverter {
  public:
   static CharResult convertToChar(const LiteralValue& literal);
   static IntResult convertToInt(const LiteralValue& literal);
+  static DoubleResult convertToDouble(const LiteralValue& literal);
 
  private:
   TypeConverter(const TypeConverter&);
