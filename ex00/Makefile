@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/04 18:22:07 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/04 18:25:34 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,8 +78,8 @@ SRCS_FILES                      += $(addprefix $(SRCS_VALUE_OBJECTS_DIR), Conver
 
 SRCS_FILES                      += $(addprefix $(SRCS_CONVERTERS_DIR), TypeConverterConstructor.cpp \
 																	 TypeConverterUtilities.cpp)
-SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), OutputFormatter.cpp \
-																	 OutputFormatterUtility.cpp \
+SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), OutputFormatterConstructor.cpp \
+																	 OutputFormatterUtilities.cpp \
 																	 StreamWriter.cpp)
 SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector.cpp \
 																	 TypeDetectorUtility.cpp \
