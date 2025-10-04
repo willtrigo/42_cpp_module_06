@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:14:38 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:23:52 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:16:25 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class ValueParser {
  public:
   static char parserChar(const LiteralValue& literal);
   static int parserInt(const LiteralValue& literal);
+  static double parseDouble(const LiteralValue& literal);
 
  private:
   static const int DECIMAL_BASE = 10;
@@ -27,6 +28,8 @@ class ValueParser {
   ~ValueParser();
 
   ValueParser& operator=(const ValueParser&);
+
+  static double getSpecialDoubleValue(SpecialValue special);
 };
 
 #endif  // VALUE_PARSER_HPP

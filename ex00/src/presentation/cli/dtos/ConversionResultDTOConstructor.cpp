@@ -6,17 +6,18 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 00:52:06 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 02:02:11 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:16:14 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "presentation/cli/dtos/ConversionResultDTO.hpp"
 
-ConversionResultDTO::ConversionResultDTO(const CharResult& charResult)
-    : charResultDTO(charResult) {}
+ConversionResultDTO::ConversionResultDTO(const CharResult& charResult,
+                                         const IntResult& intResult)
+    : charResultDTO(charResult), intResultDTO(intResult) {}
 
 ConversionResultDTO::ConversionResultDTO(const ConversionResultDTO& other)
-    : charResultDTO(other.charResultDTO) {}
+    : charResultDTO(other.charResultDTO), intResultDTO(other.intResultDTO) {}
 
 ConversionResultDTO::~ConversionResultDTO() {}
 

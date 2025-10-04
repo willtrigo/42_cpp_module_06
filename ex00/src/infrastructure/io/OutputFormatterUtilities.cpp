@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OutputFormatterUtility.cpp                         :+:      :+:    :+:   */
+/*   OutputFormatterUtilities.cpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 17:16:28 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 19:24:20 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:16:29 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 #include <sstream>
 
-std::string OutputFormatter::displayResults(const CharResult& charResult) {
+std::string OutputFormatter::displayResults(const CharResult& charResult,
+                                            const IntResult& intResult) {
   std::ostringstream oss;
   oss << TerminalColor::setColor(BLUE, "char: ");
   oss << TerminalColor::setColor(RESET, formatChar(charResult)) << std::endl;
 
+  oss << TerminalColor::setColor(RED, "int: ");
+  oss << TerminalColor::setColor(RESET, formatInt(intResult)) << std::endl;
   return oss.str();
 }
 
@@ -35,5 +38,15 @@ std::string OutputFormatter::formatChar(const CharResult& result) {
 
   std::ostringstream oss;
   oss << "'" << result.getValue() << "'";
+  return oss.str();
+}
+
+std::string OutputFormatter::formatInt(const IntResult& result) {
+  if (!result.isValid()) {
+    return "impossible";
+  }
+
+  std::ostringstream oss;
+  oss << result.getValue();
   return oss.str();
 }

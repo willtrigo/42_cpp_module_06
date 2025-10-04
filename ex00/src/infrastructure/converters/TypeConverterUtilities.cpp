@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TypeConverterUtility.cpp                           :+:      :+:    :+:   */
+/*   TypeConverterUtilities.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:24:29 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:16:41 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,28 @@ CharResult TypeConverter::convertToChar(const LiteralValue& literal) {
   }
 }
 
+IntResult TypeConverter::convertToInt(const LiteralValue& literal) {
+  if (literal.isSpecial()) {
+    return IntResult("impossible");
+  }
+
+  try {
+    double doubleValue = ValueParser::parseDouble(literal);
+    if (!isInIntRange(doubleValue)) {
+      return IntResult("impossible");
+    }
+
+    return IntResult(static_cast<int>(doubleValue));
+  } catch (...) {
+    return IntResult("impossible");
+  }
+}
+
 bool TypeConverter::isCharDisplayable(char chr) {
   return chr >= ' ' && chr <= '~';
+}
+
+bool TypeConverter::isInIntRange(double value) {
+  return value >= std::numeric_limits<int>::min() &&
+         value <= std::numeric_limits<int>::max();
 }

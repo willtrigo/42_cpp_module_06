@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ValueParserUtility.cpp                             :+:      :+:    :+:   */
+/*   ValueParserUtilities.cpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:27:58 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:23:42 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:16:21 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,43 @@ int ValueParser::parserInt(const LiteralValue& literal) {
   }
 
   return static_cast<int>(result);
+}
+
+double ValueParser::parseDouble(const LiteralValue& literal) {
+  if (literal.isSpecial()) {
+    return getSpecialDoubleValue(literal.getSpecialValue());
+  }
+
+  const std::string& raw = literal.getRawValue();
+
+  if (literal.getDetectedType() == SCALAR_CHAR) {
+    return static_cast<double>(raw[1]);
+  }
+
+  std::string parseStr = raw;
+  if (parseStr[parseStr.length() - 1] == 'f') {
+    parseStr = parseStr.substr(0, parseStr.length() - 1);
+  }
+
+  char* endptr;
+  double result = std::strtod(parseStr.c_str(), &endptr);
+
+  if (*endptr != '\0') {
+    throw std::invalid_argument("Invalid double format");
+  }
+
+  return result;
+}
+
+double ValueParser::getSpecialDoubleValue(SpecialValue special) {
+  switch (special) {
+    case SPECIAL_POSITIVE_INF:
+      return std::numeric_limits<double>::infinity();
+    case SPECIAL_NEGATIVE_INF:
+      return -std::numeric_limits<double>::infinity();
+    case SPECIAL_NAN_VALUE:
+      return std::numeric_limits<double>::quiet_NaN();
+    default:
+      return 0.0;
+  }
 }
