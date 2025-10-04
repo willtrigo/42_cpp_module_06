@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ScalarConverterConstructor.cpp                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 17:51:45 by dande-je         ###   ########.fr       */
+/*   Created: 2025/08/01 17:35:41 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/04 17:18:24 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#include "application/commands/ScalarConverter.hpp"
 
-#include "presentation/cli/dtos/ConversionResultDTO.hpp"
+#include <stdexcept>
 
-#include <string>
+ScalarConverter::ScalarConverter(const ScalarConverter& /*unused*/) {}
 
-class ScalarConverter {
- public:
-  static ConversionResultDTO execute(const std::string& literal);
+ScalarConverter::~ScalarConverter() {}
 
- private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
-
-  ScalarConverter& operator=(const ScalarConverter&);
-};
-
-#endif  // SCALAR_CONVERTER_HPP
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& /*unused*/) {
+  throw std::runtime_error("ScalarConverter assignment is not allowed");
+}

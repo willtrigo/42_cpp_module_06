@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ConversionServiceConstructor.cpp                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 17:51:45 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/04 17:35:13 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/04 17:36:50 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#include "domain/models/services/ConversionService.hpp"
 
-#include "presentation/cli/dtos/ConversionResultDTO.hpp"
+#include <stdexcept>
 
-#include <string>
+ConversionService::ConversionService(const ConversionService& /*unused*/) {}
 
-class ScalarConverter {
- public:
-  static ConversionResultDTO execute(const std::string& literal);
+ConversionService::~ConversionService() {}
 
- private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
-
-  ScalarConverter& operator=(const ScalarConverter&);
-};
-
-#endif  // SCALAR_CONVERTER_HPP
+ConversionService& ConversionService::operator=(const ConversionService& /*unused*/) {
+  throw std::runtime_error("ConversionService assignment is not allowed");
+}

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   CliControllerUtilities.cpp                         :+:      :+:    :+:   */
+/*   ScalarConverterUtilities.cpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/03 15:50:45 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 18:05:12 by dande-je         ###   ########.fr       */
+/*   Created: 2025/08/01 17:35:41 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/04 17:53:28 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "application/commands/ScalarConverter.hpp"
-#include "presentation/cli/CliController.hpp"
+#include "domain/models/services/ConversionService.hpp"
 #include "presentation/cli/dtos/ConversionResultDTO.hpp"
 
-bool CliController::isValidArguments(int argc) { return argc == MAX_SIZE_ARGS; }
-
-bool CliController::run(int argc, char** argv) {
-  if (!isValidArguments(argc)) {
-    this->m_view.showUsage(std::string(argv[NAME_PROGRAM]));
-    return false;
-  }
-  ConversionResultDTO dto =
-      ScalarConverter::execute(std::string(argv[LITERAL_ARGUMENT_INDEX]));
-  this->m_view.showResult(dto);
-  return true;
+ConversionResultDTO ScalarConverter::execute(const std::string& literal) {
+  return ConversionService::convert(literal);
 }

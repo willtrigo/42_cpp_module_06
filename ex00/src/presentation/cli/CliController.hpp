@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:40:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 00:18:50 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 18:04:43 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class CliController {
 
   static const int MAX_SIZE_ARGS = 2;
   static const int NAME_PROGRAM = 0;
+  static const int LITERAL_ARGUMENT_INDEX = 1;
 };
 
 #endif  // CLI_CONTRLLER_HPP

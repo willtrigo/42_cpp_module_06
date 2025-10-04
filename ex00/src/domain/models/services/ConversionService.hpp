@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ConversionService.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 17:51:45 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/04 17:30:10 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/04 17:34:30 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
+#ifndef CONVERSION_SERVICE_HPP
+#define CONVERSION_SERVICE_HPP
 
 #include "presentation/cli/dtos/ConversionResultDTO.hpp"
 
 #include <string>
 
-class ScalarConverter {
+class ConversionService {
  public:
-  static ConversionResultDTO execute(const std::string& literal);
+  static const int LITERAL_ARGUMENT_INDEX = 1;
+
+  static ConversionResultDTO convert(const std::string& literal);
 
  private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
+  ConversionService(const ConversionService&);
+  ~ConversionService();
 
-  ScalarConverter& operator=(const ScalarConverter&);
+  ConversionService& operator=(const ConversionService&);
 };
 
-#endif  // SCALAR_CONVERTER_HPP
+#endif  // CONVERSION_SERVICE_HPP
