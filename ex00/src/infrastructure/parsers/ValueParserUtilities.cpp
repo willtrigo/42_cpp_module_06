@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:27:58 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:13:04 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:27:52 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,32 @@ int ValueParser::parserInt(const LiteralValue& literal) {
   return static_cast<int>(result);
 }
 
+float ValueParser::parserFloat(const LiteralValue& literal) {
+  if (literal.isSpecial()) {
+    return getSpecialFloatValue(literal.getSpecialValue());
+  }
+
+  const std::string& raw = literal.getRawValue();
+
+  if (literal.getDetectedType() == SCALAR_CHAR) {
+    return static_cast<float>(raw[1]);
+  }
+
+  std::string parseStr = raw;
+  if (parseStr[parseStr.length() - 1] == 'f') {
+    parseStr = parseStr.substr(0, parseStr.length() - 1);
+  }
+
+  char* endptr;
+  double result = std::strtod(parseStr.c_str(), &endptr);
+
+  if (*endptr != '\0') {
+    throw std::invalid_argument("invalid float format");
+  }
+
+  return static_cast<float>(result);
+}
+
 double ValueParser::parseDouble(const LiteralValue& literal) {
   if (literal.isSpecial()) {
     return getSpecialDoubleValue(literal.getSpecialValue());
@@ -78,6 +104,19 @@ double ValueParser::parseDouble(const LiteralValue& literal) {
   }
 
   return result;
+}
+
+float ValueParser::getSpecialFloatValue(SpecialValue special) {
+  switch (special) {
+    case SPECIAL_POSITIVE_INF:
+      return std::numeric_limits<float>::infinity();
+    case SPECIAL_NEGATIVE_INF:
+      return -std::numeric_limits<float>::infinity();
+    case SPECIAL_NAN_VALUE:
+      return std::numeric_limits<float>::quiet_NaN();
+    default:
+      return 0.0;
+  }
 }
 
 double ValueParser::getSpecialDoubleValue(SpecialValue special) {

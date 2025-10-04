@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 00:56:27 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:12:52 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:32:35 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 ConversionResultDTO ConversionResultDTO::createSuccess(
     const CharResult& charResult, const IntResult& intResult,
-    const DoubleResult& doubleResult) {
-  ConversionResultDTO dto(charResult, intResult, doubleResult);
+    const FloatResult& floatResult, const DoubleResult& doubleResult) {
+  ConversionResultDTO dto(charResult, intResult, floatResult, doubleResult);
 
   return dto;
 }

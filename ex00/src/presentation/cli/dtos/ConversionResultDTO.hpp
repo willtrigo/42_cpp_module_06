@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 00:35:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:13:01 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:31:18 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ConversionResultDTO {
  public:
   ConversionResultDTO(const CharResult& charResult, const IntResult& intResult,
+                      const FloatResult& floatResult,
                       const DoubleResult& doubleResult);
   ConversionResultDTO(const ConversionResultDTO& other);
 
@@ -27,10 +28,12 @@ class ConversionResultDTO {
 
   static ConversionResultDTO createSuccess(const CharResult& charResult,
                                            const IntResult& intResult,
+                                           const FloatResult& floatResult,
                                            const DoubleResult& doubleResult);
 
   CharResult charResultDTO;
   IntResult intResultDTO;
+  FloatResult floatResultDTO;
   DoubleResult doubleResultDTO;
 };
 

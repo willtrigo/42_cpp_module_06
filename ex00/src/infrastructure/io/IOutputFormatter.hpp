@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:58:48 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 19:54:52 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:33:10 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class IOutputFormatter {
   virtual ~IOutputFormatter() {}
   virtual std::string displayResults(const CharResult& charResult,
                                      const IntResult& IntResult,
+                                     const FloatResult& floatResult,
                                      const DoubleResult& doubleResult) = 0;
 };
 

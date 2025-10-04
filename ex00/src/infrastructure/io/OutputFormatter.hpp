@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:58:48 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:13:12 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:35:02 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class OutputFormatter : public IOutputFormatter {
 
   std::string displayResults(const CharResult& charResult,
                              const IntResult& IntResult,
+                             const FloatResult& floatResult,
                              const DoubleResult& doubleResult);
 
  private:
@@ -34,6 +35,7 @@ class OutputFormatter : public IOutputFormatter {
 
   static std::string formatChar(const CharResult& result);
   static std::string formatInt(const IntResult& result);
+  static std::string formatFloat(const FloatResult& result);
   static std::string formatDouble(const DoubleResult& result);
 };
 

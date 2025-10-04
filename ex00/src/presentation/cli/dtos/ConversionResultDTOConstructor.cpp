@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 00:52:06 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:12:55 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 20:31:50 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 ConversionResultDTO::ConversionResultDTO(const CharResult& charResult,
                                          const IntResult& intResult,
+                                         const FloatResult& floatResult,
                                          const DoubleResult& doubleResult)
     : charResultDTO(charResult),
       intResultDTO(intResult),
+      floatResultDTO(floatResult),
       doubleResultDTO(doubleResult) {}
 
 ConversionResultDTO::ConversionResultDTO(const ConversionResultDTO& other)
     : charResultDTO(other.charResultDTO),
       intResultDTO(other.intResultDTO),
+      floatResultDTO(other.floatResultDTO),
       doubleResultDTO(other.doubleResultDTO) {}
 
 ConversionResultDTO::~ConversionResultDTO() {}
