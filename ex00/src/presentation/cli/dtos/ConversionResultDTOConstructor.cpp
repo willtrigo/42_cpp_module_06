@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ConversionResultDTOConstructor.cpp                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 01:10:13 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/04 00:52:06 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/04 02:02:11 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
-
 #include "presentation/cli/dtos/ConversionResultDTO.hpp"
 
-#include <string>
+ConversionResultDTO::ConversionResultDTO(const CharResult& charResult)
+    : charResultDTO(charResult) {}
 
-class ScalarConverter {
- public:
-  static const int LITERAL_ARGUMENT_INDEX = 1;
+ConversionResultDTO::ConversionResultDTO(const ConversionResultDTO& other)
+    : charResultDTO(other.charResultDTO) {}
 
-  static ConversionResultDTO convert(const std::string& literal);
+ConversionResultDTO::~ConversionResultDTO() {}
 
- private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
-
-  ScalarConverter& operator=(const ScalarConverter&);
-};
-
-#endif  // SCALAR_CONVERTER_HPP
+ConversionResultDTO& ConversionResultDTO::operator=(
+    const ConversionResultDTO& other) {
+  if (this != &other) {
+    this->charResultDTO = other.charResultDTO;
+  }
+  return *this;
+}

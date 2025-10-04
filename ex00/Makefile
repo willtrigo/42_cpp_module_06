@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/04 00:19:28 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/04 01:06:57 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS_PARSERS_DIR                := $(SRCS_INFRASTRUCTURE_DIR)parsers/
 
 SRCS_PRESENTATION_DIR           := $(SRCS_DIR)presentation/
 SRCS_CLI_DIR                    := $(SRCS_PRESENTATION_DIR)cli/
+SRCS_DTOS_DIR                   := $(SRCS_CLI_DIR)dtos/
 SRCS_UTILS_DIR                  := $(SRCS_PRESENTATION_DIR)utils/
 
 INCS                            := src/
@@ -82,7 +83,9 @@ SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector
 																	 ValueParser.cpp \
 																	 ValueParserUtility.cpp)
 
-SRCS_FILES                      += $(addprefix $(SRCS_CLI_DIR), CliControllerConstructor.cpp\
+SRCS_FILES                      += $(addprefix $(SRCS_DTOS_DIR), ConversionResultDTOConstructor.cpp \
+																	 ConversionResultDTOUtilitites.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_CLI_DIR), CliControllerConstructor.cpp \
 																	 CliControllerUtilities.cpp \
 																	 CliViewConstructor.cpp \
 																	 CliViewUtilities.cpp)

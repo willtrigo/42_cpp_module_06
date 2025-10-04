@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ConversionResultDTOUtilitites.cpp                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 17:35:50 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 01:10:13 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/04 00:56:27 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/04 02:02:16 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALAR_CONVERTER_HPP
-#define SCALAR_CONVERTER_HPP
-
 #include "presentation/cli/dtos/ConversionResultDTO.hpp"
 
-#include <string>
+ConversionResultDTO ConversionResultDTO::createSuccess(
+    const CharResult& charResult) {
+  ConversionResultDTO dto(charResult);
 
-class ScalarConverter {
- public:
-  static const int LITERAL_ARGUMENT_INDEX = 1;
-
-  static ConversionResultDTO convert(const std::string& literal);
-
- private:
-  ScalarConverter(const ScalarConverter&);
-  ~ScalarConverter();
-
-  ScalarConverter& operator=(const ScalarConverter&);
-};
-
-#endif  // SCALAR_CONVERTER_HPP
+  return dto;
+}

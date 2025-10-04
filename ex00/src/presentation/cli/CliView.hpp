@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 19:32:28 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/03 19:47:53 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/04 01:48:19 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "infrastructure/io/IOutputFormatter.hpp"
 #include "infrastructure/io/IStreamWriter.hpp"
+#include "presentation/cli/dtos/ConversionResultDTO.hpp"
 
 #include <string>
 
@@ -24,6 +25,7 @@ class CliView {
   ~CliView();
 
   void showUsage(const std::string& programName);
+  void showResult(ConversionResultDTO& dto);
 
  private:
   CliView(const CliView& other);
