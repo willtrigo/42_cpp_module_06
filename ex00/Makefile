@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/04 18:29:22 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/04 18:30:51 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,8 +82,8 @@ SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), OutputFormatterCo
 																	 OutputFormatterUtilities.cpp \
 																	 StreamWriterConstructor.cpp \
 																	 StreamWriterUtilities.cpp)
-SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetector.cpp \
-																	 TypeDetectorUtility.cpp \
+SRCS_FILES                      += $(addprefix $(SRCS_PARSERS_DIR), TypeDetectorConstructor.cpp \
+																	 TypeDetectorUtilities.cpp \
 																	 ValueParser.cpp \
 																	 ValueParserUtility.cpp)
 
