@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/31 18:03:49 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/04 18:11:54 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/04 18:20:09 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,8 +73,8 @@ SRCS_FILES                      += $(addprefix $(SRCS_ENTITIES_DIR), LiteralValu
 																	 LiteralValueUtilities.cpp)
 SRCS_FILES                      += $(addprefix $(SRCS_SERVICES_DIR), ConversionServiceConstructor.cpp \
 																	 ConversionServiceUtilities.cpp)
-SRCS_FILES                      += $(addprefix $(SRCS_VALUE_OBJECTS_DIR), ConversionResult.cpp \
-																	 ConversionResultUtility.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_VALUE_OBJECTS_DIR), ConversionResultConstructor.cpp \
+																	 ConversionResultUtilities.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_CONVERTERS_DIR), TypeConverter.cpp \
 																	 TypeConverterUtility.cpp)
