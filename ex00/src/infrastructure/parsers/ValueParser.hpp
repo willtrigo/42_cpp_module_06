@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:14:38 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:19:36 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 17:44:30 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class ValueParser {
 
  private:
   static const int DECIMAL_BASE = 10;
+  static const size_t CHAR_LITERAL_INDEX = 0U;
+  static const size_t REMOVE_LITERAL_F = 1U;
 
   ValueParser(const ValueParser&);
   ~ValueParser();

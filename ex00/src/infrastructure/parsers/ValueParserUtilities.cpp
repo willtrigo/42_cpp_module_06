@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:27:58 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:27:52 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 17:45:13 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@
 #include <stdexcept>
 
 char ValueParser::parserChar(const LiteralValue& literal) {
-  const std::string& raw = literal.getRawValue();
   if (literal.getDetectedType() == SCALAR_CHAR) {
-    return raw[1];
+    return literal.getRawValue().at(CHAR_LITERAL_INDEX);
   }
 
   int intValue = parserInt(literal);
@@ -36,7 +35,7 @@ int ValueParser::parserInt(const LiteralValue& literal) {
   const std::string& raw = literal.getRawValue();
 
   if (literal.getDetectedType() == SCALAR_CHAR) {
-    return static_cast<int>(raw[1]);
+    return static_cast<int>(raw.at(CHAR_LITERAL_INDEX));
   }
 
   char* endptr;
@@ -62,12 +61,13 @@ float ValueParser::parserFloat(const LiteralValue& literal) {
   const std::string& raw = literal.getRawValue();
 
   if (literal.getDetectedType() == SCALAR_CHAR) {
-    return static_cast<float>(raw[1]);
+    return static_cast<float>(raw.at(CHAR_LITERAL_INDEX));
   }
 
   std::string parseStr = raw;
-  if (parseStr[parseStr.length() - 1] == 'f') {
-    parseStr = parseStr.substr(0, parseStr.length() - 1);
+  size_t parseLength = parseStr.length() - REMOVE_LITERAL_F;
+  if (parseStr[parseLength] == 'f') {
+    parseStr = parseStr.substr(CHAR_LITERAL_INDEX, parseLength);
   }
 
   char* endptr;
@@ -88,12 +88,13 @@ double ValueParser::parseDouble(const LiteralValue& literal) {
   const std::string& raw = literal.getRawValue();
 
   if (literal.getDetectedType() == SCALAR_CHAR) {
-    return static_cast<double>(raw[1]);
+    return static_cast<double>(raw.at(CHAR_LITERAL_INDEX));
   }
 
   std::string parseStr = raw;
-  if (parseStr[parseStr.length() - 1] == 'f') {
-    parseStr = parseStr.substr(0, parseStr.length() - 1);
+  size_t parseLength = parseStr.length() - REMOVE_LITERAL_F;
+  if (parseStr[parseLength] == 'f') {
+    parseStr = parseStr.substr(CHAR_LITERAL_INDEX, parseLength);
   }
 
   char* endptr;
