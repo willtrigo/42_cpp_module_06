@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 19:32:28 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 01:48:19 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 20:10:57 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class CliView {
   ~CliView();
 
   void showUsage(const std::string& programName);
-  void showResult(ConversionResultDTO& dto);
+  void showConversion(const std::string& input, bool isTest);
+  void showDisplayTest();
+  void showFarewell();
 
  private:
   CliView(const CliView& other);
@@ -34,6 +36,8 @@ class CliView {
 
   IStreamWriter& m_writer;
   IOutputFormatter& m_formatter;
+
+  void showResult(ConversionResultDTO& dto);
 };
 
 #endif  // CLI_VIEW_HPP

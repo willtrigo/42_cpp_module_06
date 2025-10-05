@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:40:24 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 18:04:43 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 20:01:35 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class CliController {
   CliController& operator=(const CliController& other);
 
   static bool isValidArguments(int argc);
+  void runTests();
 
   CliView& m_view;
 

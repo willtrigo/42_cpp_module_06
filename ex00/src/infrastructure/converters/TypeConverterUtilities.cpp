@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/05 17:14:17 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 19:32:24 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ bool TypeConverter::isCharDisplayable(char chr) {
 }
 
 bool TypeConverter::isInCharRange(double value) {
-  return value < 0 || value > 127;
+  return value < MIN_ASCII || value > MAX_ASCII;
 }
 
 bool TypeConverter::isInIntRange(double value) {
