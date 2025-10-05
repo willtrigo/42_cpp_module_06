@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:43:23 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 17:14:17 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "infrastructure/converters/TypeConverter.hpp"
 #include "infrastructure/parsers/ValueParser.hpp"
 
+#include <cstdlib>
 #include <limits>
 
 CharResult TypeConverter::convertToChar(const LiteralValue& literal) {
@@ -21,16 +22,22 @@ CharResult TypeConverter::convertToChar(const LiteralValue& literal) {
     return CharResult("impossible");
   }
 
+  if (literal.getDetectedType() == SCALAR_CHAR) {
+    CharResult result(static_cast<char>(literal.getRawValue().at(0)));
+    return result;
+  }
+
   try {
-    int intValue = ValueParser::parserInt(literal);
-    if (intValue < std::numeric_limits<char>::min() ||
-        intValue > std::numeric_limits<char>::max()) {
+    double doubleValue = ValueParser::parseDouble(literal);
+
+    if (isInCharRange(doubleValue)) {
       return CharResult("impossible");
     }
 
-    char charValue = static_cast<char>(intValue);
+    char charValue = static_cast<char>(doubleValue);
     CharResult result(charValue);
     result.setDisplayable(isCharDisplayable(charValue));
+
     return result;
   } catch (...) {
     return CharResult("impossible");
@@ -76,7 +83,15 @@ bool TypeConverter::isCharDisplayable(char chr) {
   return chr >= ' ' && chr <= '~';
 }
 
+bool TypeConverter::isInCharRange(double value) {
+  return value < 0 || value > 127;
+}
+
 bool TypeConverter::isInIntRange(double value) {
   return value >= std::numeric_limits<int>::min() &&
          value <= std::numeric_limits<int>::max();
+}
+
+bool TypeConverter::isInFloatRange(double value) {
+  return std::abs(value) <= std::numeric_limits<float>::max();
 }

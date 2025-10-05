@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:26:40 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:24:15 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 17:10:55 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ class TypeDetector {
   static SpecialValue detectSpecialValue(const std::string& literal);
 
  private:
-  static const size_t CHAR_LITERAL_LENGTH = 3U;
-  static const size_t CHAR_LITERAL_BEGIN_INDEX = 0U;
-  static const size_t CHAR_LITERAL_END_INDEX = 2U;
+  static const size_t CHAR_LITERAL_LENGTH = 1U;
+  static const size_t CHAR_LITERAL_INDEX = 0U;
   static const size_t MINIMUM_FLOAT_LENGTH = 3U;
   static const size_t FLOAT_SUFFIX_LENGHT = 1U;
   static const size_t MINIMUM_SIGN_PREFFIX_LENGTH = 3U;

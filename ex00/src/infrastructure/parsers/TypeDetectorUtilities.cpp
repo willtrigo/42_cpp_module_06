@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TypeDetectorUtility.cpp                            :+:      :+:    :+:   */
+/*   TypeDetectorUtilities.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:27:37 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:24:03 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 17:12:22 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 #include <string>
 
 ScalarType TypeDetector::detectType(const std::string& literal) {
-  if (literal.empty()) {
-    return SCALAR_INVALID;
-  }
   if (isCharLiteral((literal))) {
     return SCALAR_CHAR;
   }
@@ -55,8 +52,7 @@ SpecialValue TypeDetector::detectSpecialValue(const std::string& literal) {
 
 bool TypeDetector::isCharLiteral(const std::string& literal) {
   return literal.length() == CHAR_LITERAL_LENGTH &&
-         literal[CHAR_LITERAL_BEGIN_INDEX] == '\'' &&
-         literal[CHAR_LITERAL_END_INDEX] == '\'';
+         (std::isdigit(literal.at(CHAR_LITERAL_INDEX)) == 0);
 }
 
 bool TypeDetector::isIntLiteral(const std::string& literal) {
@@ -85,7 +81,7 @@ bool TypeDetector::isFloatLiteral(const std::string& literal) {
   }
 
   const std::string numericPart = literal.substr(
-      CHAR_LITERAL_BEGIN_INDEX, literal.length() - FLOAT_SUFFIX_LENGHT);
+      CHAR_LITERAL_INDEX, literal.length() - FLOAT_SUFFIX_LENGHT);
 
   return isNumeric(numericPart) && containsDecimalPoint(numericPart);
 }
@@ -108,7 +104,7 @@ bool TypeDetector::isNumeric(const std::string& literal) {
 
 bool TypeDetector::hasValidSignPrefix(const std::string& literal,
                                       size_t& startIndex) {
-  const char firstChar = literal[CHAR_LITERAL_BEGIN_INDEX];
+  const char firstChar = literal[CHAR_LITERAL_INDEX];
   if (firstChar == '+' || firstChar == '-') {
     startIndex++;
     return literal.length() > MINIMUM_SIGN_PREFFIX_LENGTH;

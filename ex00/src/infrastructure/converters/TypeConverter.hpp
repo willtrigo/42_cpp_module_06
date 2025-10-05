@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:36:03 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:41:19 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/05 17:01:48 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class TypeConverter {
   TypeConverter& operator=(const TypeConverter&);
 
   static bool isCharDisplayable(char chr);
+  static bool isInCharRange(double value);
   static bool isInIntRange(double value);
   static bool isInFloatRange(double value);
 };
