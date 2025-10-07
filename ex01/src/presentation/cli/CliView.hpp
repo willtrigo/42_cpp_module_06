@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:52:15 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/07 17:16:32 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:23:40 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define CLI_VIEW_HPP
 
 #include "infrastructure/io/IStreamWriter.hpp"
-
-#include <string>
 
 class CliView {
  public:

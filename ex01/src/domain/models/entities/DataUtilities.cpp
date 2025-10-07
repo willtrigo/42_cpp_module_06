@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   CliViewUtilities.cpp                               :+:      :+:    :+:   */
+/*   DataUtilities.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 16:57:14 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/07 18:23:46 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/07 17:43:53 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/07 17:45:50 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "presentation/cli/CliView.hpp"
+#include "domain/models/entities/Data.hpp"
 
-#include <iostream>
-#include <string>
+bool Data::operator==(const Data& other) const {
+  return this->index == other.index && this->name == other.name &&
+         this->isActive == other.isActive;
+}
 
-void CliView::showFarewell() { this->m_writer.print(std::cout, "Bye!", true); }
+bool Data::operator!=(const Data& other) const {
+  return !(*this == other);
+}

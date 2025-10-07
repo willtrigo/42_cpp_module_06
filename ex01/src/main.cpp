@@ -6,10 +6,11 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:51:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/07 17:17:25 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:22:05 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "domain/models/entities/Data.hpp"
 #include "infrastructure/io/StreamWriter.hpp"
 #include "presentation/cli/CliController.hpp"
 #include "presentation/cli/CliView.hpp"
@@ -22,5 +23,7 @@ int main() {
   CliView view(writer);
   CliController controller(view);
 
-  return controller.run() ? EXIT_SUCCESS : EXIT_FAILURE;
+  Data originalData(1, "42sp", true);
+
+  return controller.run(&originalData) ? EXIT_SUCCESS : EXIT_FAILURE;
 }

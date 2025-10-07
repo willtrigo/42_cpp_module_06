@@ -6,13 +6,14 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:51:30 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/07 17:17:43 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:22:20 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLI_CONTRLLER_HPP
 #define CLI_CONTRLLER_HPP
 
+#include "domain/models/entities/Data.hpp"
 #include "presentation/cli/CliView.hpp"
 
 class CliController {
@@ -20,7 +21,7 @@ class CliController {
   CliController(CliView& view);
   ~CliController();
 
-  bool run();
+  bool run(Data* data);
 
  private:
   CliController(const CliController&);
