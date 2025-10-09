@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 16:51:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/09 17:15:51 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/09 16:38:32 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/09 18:28:24 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "domain/models/entities/Data.hpp"
-#include "infrastructure/io/StreamWriter.hpp"
-#include "presentation/cli/CliController.hpp"
-#include "presentation/cli/CliView.hpp"
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 
-#include <cstdlib>
+#include "domain/models/entities/Data.hpp"
+
 #include <stdint.h>
 
-int main() {
-  StreamWriter writer;
+class Serializer {
+ public:
+  static uintptr_t serialize(Data* ptr);
+  static Data* deserialize(uintptr_t raw);
 
-  CliView view(writer);
-  CliController controller(view);
+ private:
+  Serializer(const Serializer&);
+  ~Serializer();
 
-  Data originalData(1, "42sp", true);
-  Data testData;
-  uintptr_t ptr = 0;
+  Serializer& operator=(const Serializer&);
+};
 
-  return controller.run(&originalData, ptr, &testData) ? EXIT_SUCCESS : EXIT_FAILURE;
-}
+#endif  // SERIALIZER_HPP

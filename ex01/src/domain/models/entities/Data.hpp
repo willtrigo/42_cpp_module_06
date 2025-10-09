@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 17:32:23 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/07 17:36:41 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:27:56 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 #include <string>
 
 struct Data {
-  int index;
-  std::string name;
-  bool isActive;
-
+ public:
+  Data();
   Data(int index, const std::string& name, bool isActive);
   Data(const Data& other);
   ~Data();
@@ -28,6 +26,15 @@ struct Data {
 
   bool operator==(const Data& other) const;
   bool operator!=(const Data& other) const;
+
+  int getID() const throw();
+  std::string getName() const throw();
+  bool getIsActive() const throw();
+
+ private:
+  int m_index;
+  std::string m_name;
+  bool m_isActive;
 };
 
 #endif  // DATA_HPP

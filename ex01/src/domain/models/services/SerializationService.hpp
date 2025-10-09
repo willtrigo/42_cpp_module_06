@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   SerializationService.hpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 16:51:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/09 17:15:51 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/09 16:29:00 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/09 18:28:14 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "domain/models/entities/Data.hpp"
-#include "infrastructure/io/StreamWriter.hpp"
-#include "presentation/cli/CliController.hpp"
-#include "presentation/cli/CliView.hpp"
+#ifndef SERIALIZARION_SERVICE_HPP
+#define SERIALIZARION_SERVICE_HPP
 
-#include <cstdlib>
+#include "domain/models/entities/Data.hpp"
+
 #include <stdint.h>
 
-int main() {
-  StreamWriter writer;
+class SerializationService {
+ public:
+  static uintptr_t serializeData(Data* dataPtr);
+  static Data* deserializeData(uintptr_t serializedPtr);
 
-  CliView view(writer);
-  CliController controller(view);
+ private:
+  SerializationService(const SerializationService&);
+  ~SerializationService();
 
-  Data originalData(1, "42sp", true);
-  Data testData;
-  uintptr_t ptr = 0;
+  SerializationService& operator=(const SerializationService&);
+};
 
-  return controller.run(&originalData, ptr, &testData) ? EXIT_SUCCESS : EXIT_FAILURE;
-}
+#endif  // SERIALIZARION_SERVICE_HPP

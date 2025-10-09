@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/06 17:44:09 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/07 17:15:37 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/09 17:07:56 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,14 @@ RESET                           := \033[0m
 #******************************************************************************#
 
 SRCS_DIR                        := src/
+
+SRCS_APPLICATION_DIR            := $(SRCS_DIR)application/
+SRCS_COMMANDS_DIR               := $(SRCS_APPLICATION_DIR)commands/
+
+SRCS_DOMAIN_DIR                 := $(SRCS_DIR)domain/
+SRCS_MODELS_DIR                 := $(SRCS_DOMAIN_DIR)models/
+SRCS_ENTITIES_DIR               := $(SRCS_MODELS_DIR)entities/
+SRCS_SERVICES_DIR               := $(SRCS_MODELS_DIR)services/
 
 SRCS_INFRASTRUCTURE_DIR         := $(SRCS_DIR)infrastructure/
 SRCS_IO_DIR                     := $(SRCS_INFRASTRUCTURE_DIR)io/
@@ -53,6 +61,14 @@ SLEEP                           := sleep 0.01
 
 NAME_OUTPUT                     = serializer
 NAME                            = $(BIN_DIR)$(NAME_OUTPUT)
+
+SRCS_FILES                      += $(addprefix $(SRCS_COMMANDS_DIR), SerializerConstructor.cpp \
+																	 SerializerUtilities.cpp)
+
+SRCS_FILES                      += $(addprefix $(SRCS_ENTITIES_DIR), DataConstructor.cpp \
+																	 DataUtilities.cpp)
+SRCS_FILES                      += $(addprefix $(SRCS_SERVICES_DIR), SerializationServiceConstructor.cpp \
+																	 SerializationServiceUtilities.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_IO_DIR), StreamWriterConstructor.cpp \
 																	 StreamWriterUtilities.cpp)

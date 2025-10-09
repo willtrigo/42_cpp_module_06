@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   SerializationServiceUtilities.cpp                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 16:51:18 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/09 17:15:51 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/09 16:36:02 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/09 18:28:32 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "application/commands/Serializer.hpp"
 #include "domain/models/entities/Data.hpp"
-#include "infrastructure/io/StreamWriter.hpp"
-#include "presentation/cli/CliController.hpp"
-#include "presentation/cli/CliView.hpp"
+#include "domain/models/services/SerializationService.hpp"
 
-#include <cstdlib>
 #include <stdint.h>
 
-int main() {
-  StreamWriter writer;
+uintptr_t SerializationService::serializeData(Data* dataPtr) {
+  return Serializer::serialize(dataPtr);
+}
 
-  CliView view(writer);
-  CliController controller(view);
-
-  Data originalData(1, "42sp", true);
-  Data testData;
-  uintptr_t ptr = 0;
-
-  return controller.run(&originalData, ptr, &testData) ? EXIT_SUCCESS : EXIT_FAILURE;
+Data* SerializationService::deserializeData(uintptr_t serializedPtr) {
+  return Serializer::deserialize(serializedPtr);
 }
