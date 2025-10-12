@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 22:11:34 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/12 16:35:30 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/12 17:44:37 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ bool CliController::run() {
   try {
     for (int i = 0; i < CliController::TEST_ITERATIONS; ++i) {
       Base* const generatedInstance = BaseGenerator::generate();
+
+      this->m_view.displaySeparator();
+      this->m_view.displayIterationHeader(i);
+
+      this->m_view.identify(generatedInstance);
+      this->m_view.identify(*generatedInstance);
 
       delete generatedInstance;
     }
