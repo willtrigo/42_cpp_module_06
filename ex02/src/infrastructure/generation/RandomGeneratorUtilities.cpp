@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RandomGeneratorUtilities.cpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 19:03:20 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/12 14:38:41 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/12 14:19:30 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/12 14:36:14 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "infrastructure/io/StreamWriter.hpp"
-#include "presentation/cli/CliController.hpp"
-#include "presentation/cli/CliView.hpp"
 #include "infrastructure/generation/RandomGenerator.hpp"
 
 #include <cstdlib>
+#include <ctime>
 
-int main() {
-  StreamWriter writer;
+bool RandomGenerator::initRandomNumberGenerator() {
+  const std::time_t currentTimestamp = std::time(NULL);
 
-  CliView view(writer);
-  CliController controller(view);
-  
-  if (!RandomGenerator::initRandomNumberGenerator()) {
-    view.displayError("failed to initialize random number generator");
-    return EXIT_FAILURE;
+  if (currentTimestamp == TIME_FAILURE_INDICATOR) {
+    return false;
   }
 
-  return controller.run() ? EXIT_SUCCESS : EXIT_FAILURE;
+  std::srand(static_cast<unsigned int>(currentTimestamp));
+  return true;
+}
+
+int RandomGenerator::generateRandomOffset(int rangeSize) {
+  return std::rand() % rangeSize;
 }

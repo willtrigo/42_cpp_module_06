@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RandomGeneratorConstructor.cpp                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 19:03:20 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/12 14:38:41 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/12 14:17:11 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/12 14:41:05 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "infrastructure/io/StreamWriter.hpp"
-#include "presentation/cli/CliController.hpp"
-#include "presentation/cli/CliView.hpp"
 #include "infrastructure/generation/RandomGenerator.hpp"
 
-#include <cstdlib>
+#include <stdexcept>
 
-int main() {
-  StreamWriter writer;
+RandomGenerator::RandomGenerator(const RandomGenerator& /*unused*/) {}
 
-  CliView view(writer);
-  CliController controller(view);
-  
-  if (!RandomGenerator::initRandomNumberGenerator()) {
-    view.displayError("failed to initialize random number generator");
-    return EXIT_FAILURE;
-  }
+RandomGenerator::~RandomGenerator() {}
 
-  return controller.run() ? EXIT_SUCCESS : EXIT_FAILURE;
+RandomGenerator& RandomGenerator::operator=(const RandomGenerator& /*unused*/) {
+  throw std::runtime_error("TerminalColor assignment is not allowed");
 }
