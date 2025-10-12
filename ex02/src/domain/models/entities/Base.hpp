@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   CliController.hpp                                  :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 22:03:32 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/12 16:22:07 by dande-je         ###   ########.fr       */
+/*   Created: 2025/10/12 14:47:41 by dande-je          #+#    #+#             */
+/*   Updated: 2025/10/12 14:48:37 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLI_CONTRLLER_HPP
-#define CLI_CONTRLLER_HPP
+#ifndef BASE_HPP
+#define BASE_HPP
 
-#include "presentation/cli/CliView.hpp"
-
-class CliController {
+class Base {
  public:
-  CliController(CliView& view);
-  ~CliController();
-
-  bool run();
-
- private:
-  CliController(const CliController&);
-
-  CliController& operator=(const CliController& other);
-
-  CliView& m_view;
-
-  static const int TEST_ITERATIONS = 10;
+  virtual ~Base();
 };
 
-#endif  // CLI_CONTRLLER_HPP
+#endif  // BASE_HPP

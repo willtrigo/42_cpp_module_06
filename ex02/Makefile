@@ -6,7 +6,7 @@
 #    By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/11 19:03:34 by dande-je          #+#    #+#              #
-#    Updated: 2025/10/12 14:40:33 by dande-je         ###   ########.fr        #
+#    Updated: 2025/10/12 16:30:08 by dande-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,11 @@ SLEEP                           := sleep 0.01
 
 NAME_OUTPUT                     = identify
 NAME                            = $(BIN_DIR)$(NAME_OUTPUT)
+
+SRCS_FILES                      += $(addprefix $(SRCS_COMMANDS_DIR), BaseGeneratorConstructor.cpp \
+																	 BaseGeneratorUtilities.cpp)
+
+SRCS_FILES                      += $(addprefix $(SRCS_ENTITIES_DIR), BaseConstructor.cpp)
 
 SRCS_FILES                      += $(addprefix $(SRCS_GENERATION_DIR), RandomGeneratorConstructor.cpp \
 																	 RandomGeneratorUtilities.cpp)
