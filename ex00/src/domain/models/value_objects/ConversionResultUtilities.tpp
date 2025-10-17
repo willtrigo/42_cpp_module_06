@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConversionResultUtility.cpp                        :+:      :+:    :+:   */
+/*   ConversionResultUtilities.tpp                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:47:30 by dande-je          #+#    #+#             */
-/*   Updated: 2025/09/29 19:22:34 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/17 19:29:49 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "domain/models/value_objects/ConversionResult.hpp"
 
 #include <string>
 
@@ -38,4 +36,3 @@ template <typename T>
 void ConversionResult<T>::setDisplayable(bool displayable) {
   m_isDisplayable = displayable;
 }
-

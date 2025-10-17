@@ -6,7 +6,7 @@
 /*   By: dande-je <dande-je@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:47:14 by dande-je          #+#    #+#             */
-/*   Updated: 2025/10/04 20:29:08 by dande-je         ###   ########.fr       */
+/*   Updated: 2025/10/17 19:29:55 by dande-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ class ConversionResult {
   bool m_isDisplayable;
   std::string m_errorMsg;
 };
+
+#include "domain/models/value_objects/ConversionResultConstructor.tpp"
+#include "domain/models/value_objects/ConversionResultUtilities.tpp"
 
 template class ConversionResult<char>;
 template class ConversionResult<int>;
